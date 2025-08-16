@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Medinfo - Media dan Informasi</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/stylesmedin.css" />
+
+    <script src="https://unpkg.com/feather-icons"></script>
+  </head>
+
+  <body class="medinfo-body">
+    <header class="medinfo-page">
+      <div class="header-container">
+        <div class="logo">
+          <h1>Garuda Sakti</h1>
+          <p>Medinfo - Media dan Informasi</p>
+        </div>
+      </div>
+    </header>
+
+    <section id="hero">
+      <div class="hero-slider">
+        <img
+          src="image/medin awal.jpg"
+          alt="Kegiatan Garuda Sakti 1"
+          class="active"
+        />
+      </div>
+    </section>
+
+    <section class="medinfo-ket">
+      <div class="medinfo-subhead">
+        <h2>Divisi Medinfo</h2>
+        <div class="medinfo-peng">
+          <p>
+            Divisi Media dan Informasi bertugas dalam mendokumentasikan,
+            mempublikasikan, dan mendukung penyampaian informasi mengenai
+            berbagai kegiatan dan capaian mahasiswa dalam lingkup perlombaan
+            secara umum atau perlombaan yang diselenggarakan oleh Pusat Prestasi
+            Nasional (PKM, Mawapres, Satria Data, dan berbagai kompetisi
+            lainnya). Selain itu, Divisi Medinfo juga bertanggung jawab dalam
+            pengembangan dan pengelolaan konten media sosial organisasi sebagai
+            sarana informasi dan branding Garuda Sakti.
+          </p>
+        </div>
+      </div>
+
+      <div class="struktur">
+        <h3>Struktur Organisasi</h3>
+        <div class="kontainer-carousell">
+          <button id="prevBtn" class="nav-button">&lt;</button>
+          <button id="nextBtn" class="nav-button">&gt;</button>
+
+          <div class="anggota-carousell">
+            <div class="anggota-card">
+              <img src="image/Medinfo 1.png" alt="slide 1" />
+            </div>
+            <div class="anggota-card">
+              <img src="image/Medinfo 2.png" alt="slide 2" />
+            </div>
+            <div class="anggota-card">
+              <img src="image/Medinfo 3.png" alt="slide 3" />
+            </div>
+            <div class="anggota-card">
+              <img src="image/Medinfo 4.png" alt="slide 4" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="medinfo-proker">
+      <h2>Program Kerja</h2>
+      <div class="program-containerstruktur">
+        <div class="program-card">
+          <div class="program-image-sosmed">
+            <h3>Pengelolaan Media Sosial</h3>
+            <p>Menjadi Pengelola utama Media Sosial dari UKM Garuda Sakti</p>
+          </div>
+        </div>
+
+        <div class="program-card">
+          <div class="program-image-microblog">
+            <h3>Microblog</h3>
+            <p>Konten trivia keilmuan di sosial media Garuda Sakti</p>
+          </div>
+        </div>
+
+        <div class="program-card">
+          <div class="program-image-infolomba">
+            <h3>Info Lomba</h3>
+            <p>
+              informasi perlombaan berisi daftar kompetisi yang sedang
+              berlangsung
+            </p>
+          </div>
+        </div>
+
+        <div class="program-card">
+          <div class="program-image-sakmen">
+            <h3>Sakti Menerangi</h3>
+            <p>
+              Konten dalam bentuk video edukatif yang diunggah di media sosial
+            </p>
+          </div>
+        </div>
+
+        <div class="program-card">
+          <div class="program-image-congranger">
+            <h3>Congrangerlation</h3>
+            <p>
+              Konten unggahan capaian prestasi akademik maupun non akademik
+              anggota UKM Garuda Sakti
+            </p>
+          </div>
+        </div>
+
+        <div class="program-card">
+          <div class="program-image-comprof">
+            <h3>Company Profile</h3>
+            <p>
+              Konten pengenalan susunan kepengurusan organisasi dalam bentuk
+              postingan grafis
+            </p>
+          </div>
+        </div>
+
+        <div class="program-card">
+          <div class="program-image-mediasi">
+            <h3>Mediasi Medinfo</h3>
+            <p>Forum anggota divisi medinfo untuk monitoring dan evaluasi</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer id="footer">
+      <div class="footer-container">
+        <p class="follow-text">Ikuti kami di</p>
+        <div class="social-icons">
+          <a
+            href="https://instagram.com/garudasakti_ua"
+            target="_blank"
+            aria-label="Instagram"
+            ><i data-feather="instagram"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/garuda-sakti-universitas-airlangga-27a88a341/"
+            target="_blank"
+            aria-label="LinkedIn"
+            ><i data-feather="linkedin"></i
+          ></a>
+          <a
+            href="mailto:garudasaktiunair2022@gmail.com"
+            target="_blank"
+            aria-label="Email"
+            ><i data-feather="mail"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // --- Inisialisasi Feather Icons ---
+      // Fungsi ini mencari semua elemen dengan atribut 'data-feather'
+      // dan menggantinya dengan kode SVG ikon yang sesuai.
+      feather.replace();
+
+      // --- Fungsionalitas Carousel Struktur Anggota ---
+      // Logika ini identik dengan halaman detail divisi lainnya.
+
+      // Seleksi elemen DOM yang dibutuhkan.
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+      const carousel = document.querySelector(".anggota-carousell");
+
+      // Fungsi untuk menghitung jarak scroll berdasarkan lebar carousel yang terlihat.
+      const scrollAmount = () => {
+        return carousel.offsetWidth;
+      };
+
+      // Event listener untuk tombol 'sebelumnya'.
+      prevBtn.addEventListener("click", () => {
+        carousel.scrollBy({
+          left: -scrollAmount(), // nilai negatif untuk scroll ke kiri
+          behavior: "smooth", // animasi scroll halus
+        });
+      });
+
+      // Event listener untuk tombol 'berikutnya'.
+      nextBtn.addEventListener("click", () => {
+        carousel.scrollBy({
+          left: scrollAmount(), // nilai positif untuk scroll ke kanan
+          behavior: "smooth",
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,914 @@
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ============================= */
+/* HEADER        */
+/* ============================= */
+.header-container {
+  display: flex; /* ============================= */
+  /* GLOBAL & FONTS          */
+  /* ============================= */
+  /* File: stylesbpi.css (atau nama sejenisnya) */
+
+  /* Mengatur scroll halus untuk navigasi internal */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Reset dasar untuk konsistensi browser */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Pengaturan dasar untuk body halaman BPI */
+  .bpi-body {
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    background-color: #1a1a1a;
+    overflow-x: hidden;
+    padding-bottom: 0;
+  }
+
+  /* ============================= */
+  /* HEADER              */
+  /* ============================= */
+
+  /* Header yang menempel di atas saat scroll */
+  .bpi-page {
+    background-color: rgba(0, 0, 0, 0.85);
+    border-bottom: 2px solid #6a0f0f;
+    padding: 20px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+
+  /* Flexbox container untuk menata logo */
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .logo h1 {
+    font-size: 1.8em;
+    margin: 0;
+    color: #fff;
+    font-style: italic;
+  }
+
+  .logo p {
+    font-size: 0.8em;
+    color: #ccc;
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+
+  /* ============================= */
+  /* KONTEN UTAMA & HERO      */
+  /* ============================= */
+
+  /* Hero Section */
+  #hero {
+    position: relative;
+    overflow: hidden;
+    height: 60vh; /* Tinggi 60% dari tinggi layar */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+  }
+
+  .hero-slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero-slider img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.9;
+    transition: opacity 1s ease-in-out;
+    filter: brightness(80%);
+  }
+
+  .hero-slider img.active {
+    z-index: 1; /* Tampilkan gambar aktif di atas */
+  }
+
+  /* Section Penjelasan BPI */
+  .bpi-ket {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .bpi-peng {
+    font-size: 1.1em;
+    line-height: 1.6;
+    max-width: 800px;
+  }
+
+  /* ============================= */
+  /* PROGRAM KERJA         */
+  /* ============================= */
+
+  #bpi-proker {
+    padding: 60px 20px;
+    background-color: #1a1a1a;
+    text-align: center;
+  }
+
+  /* Judul Umum untuk Sections */
+  .bpi-subhead h2,
+  .struktur h3,
+  #bpi-proker h2 {
+    font-size: 2.5em;
+    color: #f5f5f5;
+    margin-bottom: 20px;
+  }
+
+  /* Kontainer slider horizontal untuk program kerja */
+  .program-containerstruktur {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 30px;
+    padding: 30px;
+    width: 100%;
+    /* Sembunyikan scrollbar */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .program-containerstruktur::-webkit-scrollbar {
+    display: none;
+  }
+
+  .program-card {
+    background-color: #2b2b2b;
+    padding: 25px;
+    border-radius: 10px;
+    max-width: 280px;
+    color: #fff;
+    text-align: left;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-left: 4px solid #6a0f0f;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 20px;
+    flex-shrink: 0;
+    scroll-snap-align: center;
+  }
+
+  .program-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  }
+
+  /* REFACTOR: Properti yang sama untuk semua gambar kartu program digabung di sini */
+  .program-image-impact,
+  .program-image-monitoring,
+  .program-image-arsip,
+  .program-image-keuangan,
+  .program-image-website {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Kelas spesifik untuk mengatur gambar latar belakang */
+  .program-image-impact {
+    background-image: url("../image/impact.jpg");
+  }
+  .program-image-monitoring {
+    background-image: url("../image/monitor.jpg");
+  }
+  .program-image-arsip {
+    background-image: url("../image/LogoGS.png");
+  }
+  .program-image-keuangan {
+    background-image: url("../image/LogoGS.png");
+  }
+  .program-image-website {
+    background-image: url("../image/web.png");
+  }
+
+  /* REFACTOR: Selector overlay gelap kini lebih ringkas */
+  .program-image-impact::before,
+  .program-image-arsip::before,
+  .program-image-monitoring::before,
+  .program-image-keuangan::before,
+  .program-image-website::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+    z-index: -1;
+  }
+
+  /* REFACTOR: Menggabungkan styling tipografi yang sama */
+  .program-image-impact h3,
+  .program-image-monitoring h3,
+  .program-image-website h3,
+  .program-image-arsip h3,
+  .program-image-keuangan h3 {
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    margin: 0 0 10px 0;
+  }
+
+  /* Aturan spesifik untuk ukuran font yang berbeda */
+  .program-image-monitoring h3,
+  .program-image-website h3 {
+    font-size: 1.7em;
+  }
+  .program-image-impact h3 {
+    font-size: 1.5em;
+  }
+  .program-image-arsip h3,
+  .program-image-keuangan h3 {
+    font-size: 1.4em;
+  }
+
+  .program-image-impact p,
+  .program-image-arsip p,
+  .program-image-monitoring p,
+  .program-image-keuangan p,
+  .program-image-website p {
+    font-size: 1em;
+    color: #e0e0e0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    margin: 0;
+  }
+
+  /* ============================= */
+  /* CAROUSEL             */
+  /* ============================= */
+
+  .kontainer-carousell {
+    width: 90%;
+    max-width: 500px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+    margin: auto;
+  }
+
+  .anggota-carousell {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    border-radius: 15px;
+  }
+
+  .anggota-carousell::-webkit-scrollbar {
+    display: none;
+  }
+
+  .anggota-card {
+    flex-shrink: 0;
+    width: 100%;
+    scroll-snap-align: center;
+  }
+
+  .anggota-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  .nav-button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+
+  #prevBtn {
+    left: -30px;
+  }
+  #nextBtn {
+    right: -30px;
+  }
+
+  /* ============================= */
+  /* FOOTER              */
+  /* ============================= */
+
+  footer {
+    padding: 40px 20px;
+    background-color: #0f0f0f;
+    text-align: center;
+    border-top: 2px solid #6a0f0f;
+  }
+
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .follow-text {
+    font-size: 0.9em;
+    color: #ccc;
+    letter-spacing: 1px;
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 30px;
+  }
+
+  .social-icons a {
+    color: #f5f5f5;
+    transition: color 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    color: #ff9999;
+  }
+
+  .social-icons i {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* ============================= */
+  /* RESPONSIVE (MEDIA QUERIES)   */
+  /* ============================= */
+
+  /* REFACTOR: Dua blok media query untuk 768px telah digabungkan. */
+  @media (max-width: 768px) {
+    /* Penyesuaian umum */
+    section h2 {
+      font-size: 2em;
+    }
+    .program-card {
+      width: 250px; /* Perkecil kartu program di mobile */
+    }
+
+    /* Penyesuaian Hero Section */
+    #hero {
+      height: 180px; /* Tinggi hero diperkecil */
+    }
+
+    /* Penyesuaian Font Judul */
+    .bpi-subhead h2,
+    .struktur h3,
+    #bpi-proker h2 {
+      font-size: 1.5em;
+    }
+
+    .bpi-subhead p {
+      font-size: 0.8em;
+    }
+  }
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo h1 {
+  font-size: 1.8em;
+  margin: 0;
+  color: #fff;
+  font-style: italic;
+}
+
+.logo p {
+  font-size: 0.8em;
+  color: #ccc;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.bpi-page {
+  background-color: rgba(0, 0, 0, 0.85);
+  border-bottom: 2px solid #6a0f0f;
+  padding: 20px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.bpi-body {
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  width: auto;
+  height: auto;
+  background-color: #1a1a1a;
+  overflow-x: hidden;
+  padding-bottom: 0;
+}
+
+.bpi-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.bpi-ket {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Memusatkan semua item di dalamnya */
+  gap: 50px; /* Jarak vertikal antar bagian (deskripsi, struktur, proker) */
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.bpi-subhead h2,
+.struktur h3,
+.bpi-proker h2 {
+  font-size: 2.5em;
+  color: var(--accent-color);
+  margin-bottom: 20px;
+}
+
+.bpi-peng {
+  font-size: 1.1em;
+  line-height: 1.6;
+  max-width: 800px; /* Batasi lebar teks agar mudah dibaca */
+}
+
+.struktur,
+.bpi-proker {
+  width: 100%;
+}
+
+/* ============================= */
+/* MEDIA QUERIES                */
+/* ============================= */
+
+/* TABLET */
+@media (max-width: 786px) {
+  .bpi-subhead h2 {
+    font-size: 1.5em;
+  }
+
+  .bpi-subhead p {
+    font-size: 0.8em;
+  }
+
+  .struktur h3 {
+    font-size: 1.5em;
+  }
+
+  section#bpi-proker h2 {
+    font-size: 1.5em;
+  }
+
+  section.bpi-proker h2 {
+    margin-bottom: 20px;
+  }
+  section#hero {
+    position: relative;
+    overflow: hidden;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+  }
+}
+
+/* ============================= */
+/* HERO SECTION                 */
+/* ============================= */
+
+#hero {
+  position: relative;
+  overflow: hidden;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+}
+
+.hero-slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-slider img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.9;
+  transition: opacity 1s ease-in-out;
+  filter: brightness(80%);
+}
+
+.hero-slider img.active {
+  opacity: 0.9;
+  filter: brightness(80%);
+  z-index: 1;
+}
+
+/* ============================= */
+/* Program Kerja               */
+/* ============================= */
+
+#bpi-proker {
+  padding: 60px 20px;
+  background-color: #1a1a1a;
+  text-align: center;
+}
+
+#bpi-proker h2 {
+  font-size: 2.5em;
+  color: #f5f5f5;
+  margin-bottom: 20px;
+}
+
+.program-containerstruktur {
+  display: flex;
+  overflow-x: auto; /* aktivasi scroll horizontal */
+  scroll-snap-type: x mandatory; /* mengaktifkan snap pada scroll */
+  gap: 30px;
+  padding: 30px 30px;
+  /* PENTING: Mencegah overflow */
+  width: 100%;
+
+  /* Menyembunyikan scrollbar standar di beberapa browser */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.program-containerstruktur::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
+}
+
+.program-card {
+  background-color: #2b2b2b;
+  padding: 25px;
+  border-radius: 10px;
+  max-width: 280px;
+  height: auto;
+  color: #fff;
+  text-align: left;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border-left: 4px solid #6a0f0f;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 20px;
+
+  /* PENTING: Mencegah kartu menyusut dan mengatur snap */
+  flex-shrink: 0;
+  scroll-snap-align: center;
+}
+
+/* efek hover untuk kartu program */
+.program-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.program-image-impact {
+  height: 200px;
+  width: auto;
+  background-image: url("../image/impact.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+
+  /* properti Flexbox untuk menata teks */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  box-sizing: border-box; /* Agar padding tidak menambah ukuran */
+  text-align: center;
+
+  /* Diperlukan untuk lapisan overlay */
+  position: relative;
+  z-index: 1;
+}
+
+.program-image-monitoring {
+  height: 200px;
+  width: auto;
+  background-image: url("../image/monitor.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+
+  /* properti Flexbox untuk menata teks */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  box-sizing: border-box; /* Agar padding tidak menambah ukuran */
+  text-align: center;
+
+  /* Diperlukan untuk lapisan overlay */
+  position: relative;
+  z-index: 1;
+}
+
+.program-image-arsip {
+  height: 200px;
+  width: auto;
+  background-image: url("../image/LogoGS.png");
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+
+  /* properti Flexbox untuk menata teks */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  box-sizing: border-box; /* Agar padding tidak menambah ukuran */
+  text-align: center;
+
+  /* Diperlukan untuk lapisan overlay */
+  position: relative;
+  z-index: 1;
+}
+
+.program-image-keuangan {
+  height: 200px;
+  width: auto;
+  background-image: url("../image/LogoGS.png");
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+
+  /* properti Flexbox untuk menata teks */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  box-sizing: border-box; /* Agar padding tidak menambah ukuran */
+  text-align: center;
+
+  /* Diperlukan untuk lapisan overlay */
+  position: relative;
+  z-index: 1;
+}
+
+.program-image-website {
+  height: 200px;
+  width: auto;
+  background-image: url("../image/web.png");
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+
+  /* properti Flexbox untuk menata teks */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  box-sizing: border-box; /* Agar padding tidak menambah ukuran */
+  text-align: center;
+
+  /* Diperlukan untuk lapisan overlay */
+  position: relative;
+  z-index: 1;
+}
+
+/*Menambahkan lapisan overlay gelap */
+.program-image-impact::before,
+.program-image-arsip::before,
+.program-image-monitoring::before,
+.program-image-keuangan::before,
+.program-image-website::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0.3, 0.3); /* Lapisan hitam 60% transparan */
+  border-radius: 8px;
+  z-index: -1;
+  padding: 5px 5px;
+}
+
+/*Memberi gaya pada teks agar mudah dibaca */
+.program-image-impact h3 {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Bayangan teks */
+  margin: 0 0 10px 0;
+}
+
+.program-image-monitoring h3,
+.program-image-website h3 {
+  font-size: 1.7em;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Bayangan teks */
+  margin: 0 0 10px 0;
+}
+
+.program-image-arsip h3,
+.program-image-keuangan h3 {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Bayangan teks */
+  margin: 0 0 10px 0;
+}
+
+.program-image-impact p,
+.program-image-arsip p,
+.program-image-monitoring p,
+.program-image-keuangan p,
+.program-image-website p {
+  font-size: 1em;
+  color: #e0e0e0; /* Warna putih keabuan */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0.5, 0.8); /* Bayangan teks */
+  margin: 0;
+}
+/* ============================= */
+/* Carousell              */
+/* ============================= */
+
+/* Wadah utama untuk seluruh bagian galeri */
+/* Wadah utama untuk seluruh bagian galeri */
+.kontainer-carousell {
+  width: 90%;
+  max-width: 500px;
+  background-color: var(--secondary-bg);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  position: relative;
+  margin: auto;
+}
+
+.anggota-carousell {
+  display: flex;
+  overflow-x: auto;
+  gap: 0;
+  padding: 0;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.anggota-carousell::-webkit-scrollbar {
+  display: none;
+}
+
+.anggota-card {
+  flex-shrink: 0;
+  width: 100%; /* Kartu akan mengisi penuh lebar kontainer */
+  scroll-snap-align: center;
+}
+
+.anggota-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.nav-button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+#prevBtn {
+  left: -30px;
+} /* Posisikan di luar kontainer */
+#nextBtn {
+  right: -30px;
+} /* Posisikan di luar kontainer */
+
+footer {
+  padding: 40px 20px;
+  background-color: #0f0f0f;
+  text-align: center;
+  border-top: 2px solid #6a0f0f;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.follow-text {
+  font-size: 0.9em;
+  color: #ccc;
+  letter-spacing: 1px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 30px;
+}
+
+.social-icons a {
+  color: #f5f5f5;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #ff9999;
+}
+
+.social-icons i {
+  width: 24px;
+  height: 24px;
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    /* Tidak perlu column, biarkan default */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: auto;
+  }
+
+  .anggota {
+    width: 100px;
+  }
+  .anggota img {
+    width: 100px;
+    height: 100px;
+  }
+  .program-card {
+    width: 250px; /* Perkecil kartu di mobile */
+  }
+  section h2 {
+    font-size: 2em;
+  }
+}

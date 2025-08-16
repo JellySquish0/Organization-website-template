@@ -1,0 +1,539 @@
+/* ============================= */
+/* GLOBAL RESET & FONTS          */
+/* ============================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body[class="index"] {
+  font-family: "Montserrat", sans-serif;
+  background-color: #1a1a1a;
+  color: #f5f5f5;
+  overflow-x: hidden;
+}
+
+/* ============================= */
+/* HEADER & NAVIGATION           */
+/* ============================= */
+
+header[class="index"] {
+  background-color: rgba(0, 0, 0, 0.85);
+  border-bottom: 2px solid #6a0f0f;
+  padding: 20px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nav {
+  margin-left: auto;
+}
+
+.logo h1 {
+  font-size: 1.8em;
+  margin: 0;
+  color: #fff;
+  font-style: italic;
+}
+
+.logo p {
+  font-size: 0.8em;
+  color: #ccc;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-menu li a {
+  color: #f5f5f5;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-menu li a:hover {
+  color: #ffcccc;
+  border-bottom: 2px solid #6a0f0f;
+  padding-bottom: 3px;
+}
+
+.hamburger-menu {
+  display: none; /* Sembunyikan di desktop */
+  background: none;
+  border: none;
+  color: #f5f5f5; /* Fallback color */
+  cursor: pointer;
+}
+
+/* ============================= */
+/* PENJELASAN UKM                */
+/* ============================= */
+
+#penjelasan-ukm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.subhead-penjelasan {
+  font-size: 1.3em;
+  color: #fff;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.subhead-penjelasan h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+.penjelasan-ket {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+/* ============================= */
+/* MEDIA QUERIES UNTUK MOBILE    */
+/* ============================= */
+@media (max-width: 768px) {
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: auto;
+  }
+
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #1e1e1e;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding: 1rem 0;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-menu li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-menu li a {
+    display: block;
+    padding: 1rem;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+
+  .anggota {
+    width: 100px;
+  }
+  .anggota img {
+    width: 100px;
+    height: 100px;
+  }
+  .program-card {
+    width: 250px;
+  }
+  section h2 {
+    font-size: 2em;
+  }
+  .penjelasan-ket {
+    padding: 0 3rem;
+  }
+
+  section#hero {
+    height: 30vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .subhead-penjelasan {
+    font-size: 0.7em;
+  }
+
+  section#struktur-organisasi h2,
+  section#program-kerja h2,
+  section#arsip-essay h2 {
+    font-size: 1.5em;
+  }
+
+  section#program-kerja h2 {
+    margin-bottom: 0;
+  }
+
+  section#arsip-essay p {
+    font-size: 0.8em;
+  }
+}
+
+/* ============================= */
+/* HERO SECTION                  */
+/* ============================= */
+
+#hero {
+  position: relative;
+  overflow: hidden;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+}
+
+.hero-slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-slider img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+  filter: brightness(80%);
+}
+
+.hero-slider img.active {
+  opacity: 0.9;
+  filter: brightness(80%);
+  z-index: 1;
+}
+
+/* ============================= */
+/* STRUKTUR ORGANISASI           */
+/* ============================= */
+
+#struktur-organisasi {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #1a1a1a;
+}
+
+#struktur-organisasi h2 {
+  color: #f5f5f5;
+  margin-bottom: 40px;
+  font-size: 2.5em;
+}
+
+.struktur-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.ketua-row {
+  flex-direction: column;
+  align-items: center;
+}
+
+.anggota {
+  width: 150px;
+  text-align: center;
+}
+
+.anggota:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.anggota img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid #6a0f0f;
+  margin-bottom: 10px;
+}
+
+.anggota h3 {
+  font-size: 0.9em;
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ============================= */
+/* PROGRAM KERJA                 */
+/* ============================= */
+
+#program-kerja {
+  padding: 60px 20px;
+  background-color: #1a1a1a;
+  text-align: center;
+}
+
+#program-kerja h2 {
+  font-size: 2.5em;
+  color: #f5f5f5;
+  margin-bottom: 20px;
+}
+
+.program-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 30px;
+  padding: 30px 30px;
+  width: 100%;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.program-container::-webkit-scrollbar {
+  display: none;
+}
+
+.program-card {
+  background-color: #2b2b2b;
+  padding: 25px;
+  border-radius: 10px;
+  max-width: 280px;
+  height: auto;
+  color: #fff;
+  text-align: left;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border-left: 4px solid #6a0f0f;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 20px;
+  flex-shrink: 0;
+  scroll-snap-align: center;
+}
+
+.program-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* REFACTOR: Properti yang sama untuk semua kartu program digabungkan di sini. */
+.program-logo,
+.program-logoCampsom,
+.program-logogsfun,
+.program-logongopi,
+.program-logogemastik,
+.program-logomagang {
+  height: 200px;
+  width: auto;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  box-sizing: border-box;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Kelas spesifik HANYA untuk mengatur gambar latar belakang. */
+.program-logo {
+  background-image: url("../image/Opening\ PIMNAS-135.jpg");
+}
+.program-logoCampsom {
+  background-image: url("../image/IMG_0008.JPG");
+}
+.program-logogsfun {
+  background-image: url("../image/IMG_9974.JPG");
+}
+.program-logongopi {
+  background-image: url("../image/IMG-20250524.jpg");
+}
+.program-logogemastik {
+  background-image: url("../image/IMG_20250527_144352_691.jpg");
+}
+.program-logomagang {
+  background-image: url("../image/IMG_20240831_184113.jpg");
+}
+
+/* REFACTOR: Selector overlay gelap kini lebih ringkas dan berlaku untuk semua kartu. */
+.program-logo::before,
+.program-logoCampsom::before,
+.program-logogsfun::before,
+.program-logongopi::before,
+.program-logogemastik::before,
+.program-logomagang::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  z-index: -1;
+  padding: 5px;
+}
+
+/* REFACTOR: Menggabungkan styling tipografi yang sama. */
+.program-logo h3,
+.program-logoCampsom h3,
+.program-logogsfun h3,
+.program-logongopi h3,
+.program-logogemastik h3,
+.program-logomagang h3 {
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  margin: 0 0 10px 0;
+}
+
+/* Aturan spesifik untuk ukuran font yang berbeda. */
+.program-logoCampsom h3,
+.program-logogsfun h3 {
+  font-size: 2em;
+}
+
+.program-logo h3,
+.program-logongopi h3,
+.program-logogemastik h3,
+.program-logomagang h3 {
+  font-size: 1.7em;
+}
+
+.program-logo p,
+.program-logoCampsom p,
+.program-logogsfun p,
+.program-logongopi p,
+.program-logogemastik p,
+.program-logomagang p {
+  font-size: 1em;
+  color: #e0e0e0;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  margin: 0;
+}
+
+/* ============================= */
+/* ARSIP PKM                     */
+/* ============================= */
+
+#arsip-essay {
+  padding: 60px 20px;
+  background-color: #1a1a1a;
+  text-align: center;
+}
+
+#arsip-essay h2 {
+  font-size: 2.5em;
+  color: #f5f5f5;
+  margin-bottom: 10px;
+}
+
+.arsip-desc {
+  color: #ccc;
+  font-size: 1em;
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.arsip-link a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #6a0f0f;
+  color: #fff;
+  padding: 15px 25px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.arsip-link a:hover {
+  background-color: #8a1c1c;
+}
+
+.arsip-link i {
+  width: 20px;
+  height: 20px;
+}
+
+/* ============================= */
+/* FOOTER                        */
+/* ============================= */
+
+footer {
+  padding: 40px 20px;
+  background-color: #0f0f0f;
+  text-align: center;
+  border-top: 2px solid #6a0f0f;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.follow-text {
+  font-size: 0.9em;
+  color: #ccc;
+  letter-spacing: 1px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 30px;
+}
+
+.social-icons a {
+  color: #f5f5f5;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #ff9999;
+}
+
+.social-icons i {
+  width: 24px;
+  height: 24px;
+}

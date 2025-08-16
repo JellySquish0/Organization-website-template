@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BPI - Badan Pengurus Inti</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/stylesbpi.css" />
+
+    <script src="https://unpkg.com/feather-icons"></script>
+  </head>
+
+  <body class="bpi-body">
+    <header class="bpi-page">
+      <div class="header-container">
+        <div class="logo">
+          <h1>Garuda Sakti</h1>
+          <p>BPI - Badan Pengurus Inti</p>
+        </div>
+      </div>
+    </header>
+
+    <section id="hero">
+      <div class="hero-slider">
+        <img
+          src="image/bpi fix.jpg"
+          alt="Kegiatan Garuda Sakti 1"
+          class="active"
+        />
+      </div>
+    </section>
+
+    <section class="bpi-ket">
+      <div class="bpi-subhead">
+        <h2>Badan Pengurus Inti</h2>
+        <div class="bpi-peng">
+          <p>
+            Badan Pengurus Inti (BPI) adalah lembaga yang bertanggung jawab
+            mengelola dan mengkoordinasikan seluruh kegiatan organisasi Garuda
+            Sakti. BPI terdiri dari Ketua, Wakil Ketua, Sekretaris, Bendahara,
+            dan beberapa anggota lainnya yang memiliki peran penting dalam
+            pengambilan keputusan strategis.
+          </p>
+        </div>
+      </div>
+
+      <div class="struktur">
+        <h3>Struktur Organisasi</h3>
+        <div class="kontainer-carousell">
+          <button id="prevBtn" class="nav-button">&lt;</button>
+          <button id="nextBtn" class="nav-button">&gt;</button>
+
+          <div class="anggota-carousell">
+            <div class="anggota-card">
+              <img src="image/BPI 1.png" alt="slide 1" />
+            </div>
+            <div class="anggota-card">
+              <img src="image/BPI 2.png" alt="slide 2" />
+            </div>
+            <div class="anggota-card">
+              <img src="image/BPI 3.png" alt="slide 3" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="bpi-proker">
+      <h2>Program Kerja</h2>
+      <div class="program-containerstruktur">
+        <div class="program-card">
+          <div class="program-image-impact">
+            <h3>Impact Talk</h3>
+            <p>Melakukan Rapat rutin dengan Kepala Divisi</p>
+          </div>
+        </div>
+
+        <div class="program-card">
+          <div class="program-image-monitoring">
+            <h3>Monitoring</h3>
+            <p>
+              Melakukan Controling dan Evaluasi setiap Divisi di UKM Garuda
+              Sakti
+            </p>
+          </div>
+        </div>
+
+        <div class="program-card">
+          <div class="program-image-website">
+            <h3>Website</h3>
+            <p>
+              Pengadaan Website UKM Garuda Sakti sebagai salah satu media
+              branding
+            </p>
+          </div>
+        </div>
+
+        <div class="program-card">
+          <div class="program-image-arsip">
+            <h3>Pengarsipan</h3>
+            <p>
+              Meliputi pendataan pengurus, Notulensi Kegiatan, dan
+              Dokumen-dokumen lainnya
+            </p>
+          </div>
+        </div>
+
+        <div class="program-card">
+          <div class="program-image-keuangan">
+            <h3>Pengelolaan Keuangan</h3>
+            <p>
+              melakukan monitoring dan pengelolaan keuangan UKM Garuda Sakti
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer id="footer">
+      <div class="footer-container">
+        <p class="follow-text">Ikuti kami di</p>
+        <div class="social-icons">
+          <a
+            href="https://instagram.com/garudasakti_ua"
+            target="_blank"
+            aria-label="Instagram"
+            ><i data-feather="instagram"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/garuda-sakti-universitas-airlangga-27a88a341/"
+            target="_blank"
+            aria-label="LinkedIn"
+            ><i data-feather="linkedin"></i
+          ></a>
+          <a
+            href="mailto:garudasaktiunair2022@gmail.com"
+            target="_blank"
+            aria-label="Email"
+            ><i data-feather="mail"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Menjalankan script setelah seluruh konten HTML selesai dimuat.
+      document.addEventListener("DOMContentLoaded", () => {
+        // --- Fungsionalitas Hero Slider ---
+        const images = document.querySelectorAll(".hero-slider img");
+        let current = 0;
+        // Script ini akan berjalan, namun tidak akan ada perubahan visual
+        // karena hanya ada satu gambar di dalam '.hero-slider'.
+        setInterval(() => {
+          if (images.length > 1) {
+            // Pengecekan sederhana untuk menghindari error
+            images[current].classList.remove("active");
+            current = (current + 1) % images.length;
+            images[current].classList.add("active");
+          }
+        }, 4000);
+
+        // --- Inisialisasi Feather Icons ---
+        // Sebaiknya hanya panggil `feather.replace()` satu kali di dalam DOMContentLoaded.
+        feather.replace();
+      });
+
+      // --- Fungsionalitas Carousel Struktur Anggota ---
+      // Seleksi elemen-elemen yang dibutuhkan untuk carousel.
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+      const carousel = document.querySelector(".anggota-carousell");
+
+      // Fungsi untuk menentukan seberapa jauh carousel harus bergeser (scroll).
+      // Menggunakan offsetWidth agar pergeseran sesuai dengan lebar kontainer carousel yang terlihat.
+      const scrollAmount = () => {
+        return carousel.offsetWidth;
+      };
+
+      // Event listener untuk tombol "Previous" (Sebelumnya).
+      prevBtn.addEventListener("click", () => {
+        // Menggeser carousel ke kiri.
+        carousel.scrollBy({
+          left: -scrollAmount(), // Nilai negatif untuk bergerak ke kiri.
+          behavior: "smooth", // Memberikan animasi scroll yang halus.
+        });
+      });
+
+      // Event listener untuk tombol "Next" (Berikutnya).
+      nextBtn.addEventListener("click", () => {
+        // Menggeser carousel ke kanan.
+        carousel.scrollBy({
+          left: scrollAmount(), // Nilai positif untuk bergerak ke kanan.
+          behavior: "smooth",
+        });
+      });
+    </script>
+  </body>
+</html>

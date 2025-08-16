@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PKM - Pekan Kreativitas Mahasiswa</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/stylespkm.css" />
+
+    <script src="https://unpkg.com/feather-icons"></script>
+  </head>
+
+  <body class="pkm-body">
+    <header class="pkm-page">
+      <div class="header-container">
+        <div class="logo">
+          <h1>Garuda Sakti</h1>
+          <p>PKM - Pekan Kreativitas Mahasiswa</p>
+        </div>
+      </div>
+    </header>
+
+    <section id="hero">
+      <div class="hero-slider">
+        <img
+          src="image/pkm awal.jpg"
+          alt="Kegiatan Garuda Sakti 1"
+          class="active"
+        />
+      </div>
+    </section>
+
+    <section class="pkm-ket">
+      <div class="pkm-subhead">
+        <h2>Divisi PKM</h2>
+        <div class="pkm-peng">
+          <p>
+            Divisi Program Kreativitas Mahasiswa adalah divisi yang bertugas
+            melaksanakan sosialisasi, pusat informasi, pembekalan, pelatihan,
+            pendampingan, monitoring dan evaluasi dari pelaksanaan PKM
+            Universitas Airlangga serta mempersiapkan pembekalan menuju Pekan
+            Ilmiah Mahasiswa Nasional (PIMNAS)
+          </p>
+        </div>
+      </div>
+
+      <div class="struktur">
+        <h3>Struktur Organisasi</h3>
+        <div class="kontainer-carousell">
+          <button id="prevBtn" class="nav-button">&lt;</button>
+          <button id="nextBtn" class="nav-button">&gt;</button>
+
+          <div class="anggota-carousell">
+            <div class="anggota-card">
+              <img src="image/PKM 1.png" alt="slide 1" />
+            </div>
+            <div class="anggota-card">
+              <img src="image/PKM 2.png" alt="slide 2" />
+            </div>
+            <div class="anggota-card">
+              <img src="image/PKM 3.png" alt="slide 3" />
+            </div>
+            <div class="anggota-card">
+              <img src="image/PKM 4.png" alt="slide 4" />
+            </div>
+            <div class="anggota-card">
+              <img src="image/PKM 5.png" alt="slide 4" />
+            </div>
+            <div class="anggota-card">
+              <img src="image/PKM 6.png" alt="slide 4" />
+            </div>
+            <div class="anggota-card">
+              <img src="image/PKM 7.png" alt="slide 4" />
+            </div>
+            <div class="anggota-card">
+              <img src="image/PKM 8.png" alt="slide 4" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pkm-proker">
+      <h2>Program Kerja</h2>
+      <div class="program-containerstruktur">
+        <div class="program-card">
+          <div class="program-image-kim">
+            <h3>KIM Unair</h3>
+            <p>
+              Kompetisi Ilmiah Mahasiswa adalah program kolaborasi dari
+              kemahasiswaan unair dan garuda sakti
+            </p>
+          </div>
+        </div>
+
+        <div class="program-card">
+          <div class="program-image-temu">
+            <h3>Temu Ksatria</h3>
+            <p>
+              Wadah mempertemukan mahasiswa UNAIR yang masih membutuhkan
+              kelompok PKM.
+            </p>
+          </div>
+        </div>
+
+        <div class="program-card">
+          <div class="program-image-sosialisasi">
+            <h3>Sosialisasi PKM</h3>
+            <p>Sosialisasi mengenai PKM dan persiapan menuju pendanaan PKM</p>
+          </div>
+        </div>
+
+        <div class="program-card">
+          <div class="program-image-kelas">
+            <h3>Kelas PKM</h3>
+            <p>
+              Memberikan informasi tentang Program Kreativitas Mahasiswa Kepada
+              staf Garuda Sakti
+            </p>
+          </div>
+        </div>
+
+        <div class="program-card">
+          <div class="program-image-live">
+            <h3>Live Bersama Ksatria</h3>
+            <p>
+              kegiatan penyampaian informasi dan pengalaman oleh alumni
+              pendanaan atau PIMNAS
+            </p>
+          </div>
+        </div>
+
+        <div class="program-card">
+          <div class="program-image-company">
+            <h3>Company Visit</h3>
+            <p>
+              kegiatan kunjungan ke perusahaan atau pusat riset untuk memberikan
+              wawasan langsung
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer id="footer">
+      <div class="footer-container">
+        <p class="follow-text">Ikuti kami di</p>
+        <div class="social-icons">
+          <a
+            href="https://instagram.com/garudasakti_ua"
+            target="_blank"
+            aria-label="Instagram"
+            ><i data-feather="instagram"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/garuda-sakti-universitas-airlangga-27a88a341/"
+            target="_blank"
+            aria-label="LinkedIn"
+            ><i data-feather="linkedin"></i
+          ></a>
+          <a
+            href="mailto:garudasaktiunair2022@gmail.com"
+            target="_blank"
+            aria-label="Email"
+            ><i data-feather="mail"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Menjalankan script setelah seluruh konten HTML selesai dimuat.
+      document.addEventListener("DOMContentLoaded", () => {
+        // --- Fungsionalitas Hero Slider ---
+        const images = document.querySelectorAll(".hero-slider img");
+        let current = 0;
+        // Script ini tidak akan memberikan efek visual karena hanya ada satu gambar.
+        setInterval(() => {
+          if (images.length > 1) {
+            images[current].classList.remove("active");
+            current = (current + 1) % images.length;
+            images[current].classList.add("active");
+          }
+        }, 4000);
+
+        // --- Inisialisasi Feather Icons ---
+        feather.replace();
+      });
+
+      // --- Fungsionalitas Carousel Struktur Anggota ---
+      // Logika ini identik dengan yang ada di halaman detail divisi lainnya.
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+      const carousel = document.querySelector(".anggota-carousell");
+
+      // Fungsi untuk menghitung jarak scroll.
+      const scrollAmount = () => {
+        return carousel.offsetWidth;
+      };
+
+      // Event listener untuk tombol 'sebelumnya'.
+      prevBtn.addEventListener("click", () => {
+        carousel.scrollBy({
+          left: -scrollAmount(),
+          behavior: "smooth",
+        });
+      });
+
+      // Event listener untuk tombol 'berikutnya'.
+      nextBtn.addEventListener("click", () => {
+        carousel.scrollBy({
+          left: scrollAmount(),
+          behavior: "smooth",
+        });
+      });
+    </script>
+  </body>
+</html>

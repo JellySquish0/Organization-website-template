@@ -1,0 +1,423 @@
+/* ============================= */
+/* GLOBAL & FONTS                */
+/* ============================= */
+/* File: stylesmedin.css */
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Pengaturan dasar untuk body halaman Medinfo */
+.medinfo-body {
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  background-color: #1a1a1a;
+  overflow-x: hidden;
+  padding-bottom: 0;
+}
+
+/* ============================= */
+/* HEADER                        */
+/* ============================= */
+
+.medinfo-page {
+  background-color: rgba(0, 0, 0, 0.85);
+  border-bottom: 2px solid #6a0f0f;
+  padding: 20px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo h1 {
+  font-size: 1.8em;
+  margin: 0;
+  color: #fff;
+  font-style: italic;
+}
+
+.logo p {
+  font-size: 0.8em;
+  color: #ccc;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+/* ============================= */
+/* KONTEN UTAMA & HERO           */
+/* ============================= */
+
+#hero {
+  position: relative;
+  overflow: hidden;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+}
+
+.hero-slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-slider img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.9;
+  transition: opacity 1s ease-in-out;
+  filter: brightness(80%);
+}
+
+.hero-slider img.active {
+  z-index: 1;
+}
+
+/* Section Penjelasan Medinfo */
+.medinfo-ket {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.medinfo-peng {
+  font-size: 1.1em;
+  line-height: 1.6;
+  max-width: 800px;
+}
+
+/* ============================= */
+/* PROGRAM KERJA                 */
+/* ============================= */
+
+#medinfo-proker {
+  padding: 60px 20px;
+  background-color: #1a1a1a;
+  text-align: center;
+}
+
+/* Judul Umum untuk Sections */
+.medinfo-subhead h2,
+.struktur h3,
+#medinfo-proker h2 {
+  font-size: 2.5em;
+  color: #f5f5f5;
+  margin-bottom: 20px;
+}
+
+#medinfo-proker h2 {
+  margin-bottom: 40px;
+}
+
+.program-containerstruktur {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 30px;
+  padding: 30px;
+  width: 100%;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.program-containerstruktur::-webkit-scrollbar {
+  display: none;
+}
+
+.program-card {
+  background-color: #2b2b2b;
+  padding: 25px;
+  border-radius: 10px;
+  max-width: 280px;
+  color: #fff;
+  text-align: left;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border-left: 4px solid #6a0f0f;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 20px;
+  flex-shrink: 0;
+  scroll-snap-align: center;
+}
+
+.program-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* REFACTOR: Properti yang sama untuk semua gambar kartu program digabung di sini */
+.program-image-sosmed,
+.program-image-microblog,
+.program-image-infolomba,
+.program-image-sakmen,
+.program-image-congranger,
+.program-image-comprof,
+.program-image-mediasi {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  box-sizing: border-box;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Kelas spesifik HANYA untuk mengatur gambar latar belakang */
+.program-image-sosmed {
+  background-image: url("../image/Screenshot\ 2025-07-31\ 145613.png");
+}
+.program-image-microblog {
+  background-image: url("../image/micro.png ");
+}
+.program-image-infolomba {
+  background-image: url("../image/info\ lomba.png");
+}
+.program-image-sakmen {
+  background-image: url("../image/sakmen.png");
+}
+.program-image-congranger {
+  background-image: url("../image/cong.png");
+}
+.program-image-comprof {
+  background-image: url("../image/Medinfo\ 1.png");
+}
+.program-image-mediasi {
+  background-image: url("../image/mediasi.jpg");
+}
+
+/* REFACTOR: Selector overlay gelap kini lebih ringkas */
+.program-image-sosmed::before,
+.program-image-infolomba::before,
+.program-image-microblog::before,
+.program-image-sakmen::before,
+.program-image-congranger::before,
+.program-image-comprof::before,
+.program-image-mediasi::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  z-index: -1;
+}
+
+/* REFACTOR: Menggabungkan styling tipografi yang sama */
+.program-image-sosmed h3,
+.program-image-sakmen h3,
+.program-image-comprof h3,
+.program-image-mediasi h3,
+.program-image-microblog h3,
+.program-image-infolomba h3,
+.program-image-congranger h3 {
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  margin: 0 0 10px 0;
+}
+
+/* Aturan spesifik untuk ukuran font yang berbeda */
+.program-image-microblog h3,
+.program-image-infolomba h3 {
+  font-size: 1.7em;
+}
+.program-image-sosmed h3,
+.program-image-sakmen h3,
+.program-image-comprof h3,
+.program-image-mediasi h3 {
+  font-size: 1.5em;
+}
+.program-image-congranger h3 {
+  font-size: 1.2em;
+}
+
+.program-image-sosmed p,
+.program-image-infolomba p,
+.program-image-microblog p,
+.program-image-sakmen p,
+.program-image-comprof p,
+.program-image-mediasi p,
+.program-image-congranger p {
+  color: #e0e0e0;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  margin: 0;
+}
+
+/* Aturan spesifik untuk ukuran font yang berbeda */
+.program-image-congranger p {
+  font-size: 0.9em;
+}
+.program-image-sosmed p,
+.program-image-infolomba p,
+.program-image-microblog p,
+.program-image-sakmen p,
+.program-image-comprof p,
+.program-image-mediasi p {
+  font-size: 1em;
+}
+
+/* ============================= */
+/* CAROUSEL                      */
+/* ============================= */
+
+.kontainer-carousell {
+  width: 90%;
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  position: relative;
+  margin: auto;
+}
+
+.anggota-carousell {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  border-radius: 15px;
+}
+
+.anggota-carousell::-webkit-scrollbar {
+  display: none;
+}
+
+.anggota-card {
+  flex-shrink: 0;
+  width: 100%;
+  scroll-snap-align: center;
+}
+
+.anggota-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.nav-button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+#prevBtn {
+  left: -30px;
+}
+#nextBtn {
+  right: -30px;
+}
+
+/* ============================= */
+/* FOOTER                        */
+/* ============================= */
+
+footer {
+  padding: 40px 20px;
+  background-color: #0f0f0f;
+  text-align: center;
+  border-top: 2px solid #6a0f0f;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.follow-text {
+  font-size: 0.9em;
+  color: #ccc;
+  letter-spacing: 1px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 30px;
+}
+
+.social-icons a {
+  color: #f5f5f5;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #ff9999;
+}
+
+.social-icons i {
+  width: 24px;
+  height: 24px;
+}
+
+/* ============================= */
+/* RESPONSIVE (MEDIA QUERIES)    */
+/* ============================= */
+
+/* REFACTOR: Dua blok media query telah digabungkan menjadi satu */
+@media (max-width: 768px) {
+  /* Penyesuaian umum */
+  section h2 {
+    font-size: 2em;
+  }
+  .program-card {
+    width: 250px;
+  }
+
+  /* Penyesuaian Hero Section */
+  section#hero {
+    height: 30vh;
+  }
+
+  /* Penyesuaian Font Judul */
+  .medinfo-subhead h2,
+  .struktur h3,
+  section#medinfo-proker h2 {
+    font-size: 1.5em;
+  }
+
+  .medinfo-subhead p {
+    font-size: 0.8em;
+  }
+}
